@@ -6,6 +6,8 @@ import { AppRoutes } from './routing/index';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { HeaderExample } from './shared/components/HeaderExample';
+import { theme } from './shared/utils/theme';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 
 const queryClient = new QueryClient();
 
@@ -14,8 +16,11 @@ function App() {
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
-          <HeaderExample />
-          <AppRoutes />
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <HeaderExample />
+            <AppRoutes />
+          </ThemeProvider>
         </Provider>
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
