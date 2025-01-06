@@ -16,7 +16,7 @@ const MemoryCard = ({ card, onCardClick, matches, disabled }) => {
 
   useEffect(() => {
     const image = new Image();
-    image.src = `src/assets/${card.fileName}`;
+    image.src = `/images/${card.fileName}`;
     image.onload = () => setPreloadedImage(image.src);
   }, [card.fileName]);
 
