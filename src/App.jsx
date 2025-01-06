@@ -20,7 +20,7 @@ const PreloadImages = () => {
 
     cards.forEach((card) => {
       const link = document.createElement('link');
-      link.rel = 'prefetch';
+      link.rel = 'preload';
       link.href = `images/${card.fileName}}`;
       link.as = 'image';
       head.appendChild(link);
