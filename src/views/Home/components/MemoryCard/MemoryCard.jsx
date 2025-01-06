@@ -57,35 +57,53 @@ const MemoryCard = ({ card, onCardClick, matches, disabled }) => {
     };
   };
 
-  return isVisible || isMatch ? (
-    <Avatar
-      alt="Card image"
-      src={`images/${card.fileName}`}
-      sx={{
-        width: avatarSize().width,
-        height: avatarSize().length,
-        marginBottom: 3,
-        boxShadow: `0px 0px 14px 3px ${isMatch ? theme.palette.success.main : theme.palette.primary.main}`,
-        pointerEvents: `${disabled ? 'none' : ''}`,
-      }}
-      variant={'rounded'}
-    />
-  ) : (
-    <Avatar
-      alt="Card logo"
-      sx={{
-        width: avatarSize().width,
-        height: avatarSize().length,
-        marginBottom: 3,
-        boxShadow: `0px 0px 14px 3px ${theme.palette.primary.main}`,
-        cursor: `${'pointer'}`,
-        pointerEvents: `${disabled ? 'none' : ''}`,
-      }}
-      variant={'rounded'}
-      onClick={handleCardClick}
-    >
-      <Face fontSize={'large'} color={'primary'} />
-    </Avatar>
+  return (
+    <>
+      {/*< Hidden avatars for better rendering >*/}
+      <Avatar
+        alt="Card image"
+        src={`images/${card.fileName}`}
+        sx={{
+          width: avatarSize().width,
+          height: avatarSize().length,
+          marginBottom: 3,
+          visibility: 'hidden',
+          display: 'none',
+        }}
+        variant={'rounded'}
+      />
+      {/*</ Hidden avatars for better rendering >*/}
+      {isVisible || isMatch ? (
+        <Avatar
+          alt="Card image"
+          src={`images/${card.fileName}`}
+          sx={{
+            width: avatarSize().width,
+            height: avatarSize().length,
+            marginBottom: 3,
+            boxShadow: `0px 0px 14px 3px ${isMatch ? theme.palette.success.main : theme.palette.primary.main}`,
+            pointerEvents: `${disabled ? 'none' : ''}`,
+          }}
+          variant={'rounded'}
+        />
+      ) : (
+        <Avatar
+          alt="Card logo"
+          sx={{
+            width: avatarSize().width,
+            height: avatarSize().length,
+            marginBottom: 3,
+            boxShadow: `0px 0px 14px 3px ${theme.palette.primary.main}`,
+            cursor: `${'pointer'}`,
+            pointerEvents: `${disabled ? 'none' : ''}`,
+          }}
+          variant={'rounded'}
+          onClick={handleCardClick}
+        >
+          <Face fontSize={'large'} color={'primary'} />
+        </Avatar>
+      )}
+    </>
   );
 };
 
