@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { getApiBaseUrl } from '../utils/getApiBaseUrl';
 
 class ApiService {

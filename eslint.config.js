@@ -55,6 +55,27 @@ export default [
           tsx: 'never',
         },
       ],
+      'sort-imports': [
+        'error',
+        {
+          ignoreCase: false,
+          ignoreDeclarationSort: true,
+          ignoreMemberSort: false,
+          allowSeparatedGroups: true,
+        },
+      ],
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin', // Node.js built-in modules (e.g., fs, path)
+            'external', // Dependencies from node_modules
+            'internal', // Internal project imports
+          ],
+          'newlines-between': 'always', // Ensure newline between groups
+          alphabetize: { order: 'ignore', caseInsensitive: true },
+        },
+      ],
       ...vitestPlugin.configs.recommended.rules,
     },
     settings: {

@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import todoReducer from './todoSlice';
+
+import timeSlice from './timeSlice';
 
 const store = configureStore({
   reducer: {
-    todo: todoReducer,
+    time: timeSlice,
   },
 });
 
