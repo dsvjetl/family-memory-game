@@ -16,13 +16,20 @@ const queryClient = new QueryClient();
 const PreloadImages = () => {
   useEffect(() => {
     const head = document.head;
+    const links = [];
+
     cards.forEach((card) => {
       const link = document.createElement('link');
-      link.rel = 'preload';
+      link.rel = 'prefetch';
       link.href = `images/${card.fileName}}`;
       link.as = 'image';
       head.appendChild(link);
+      links.push(link);
     });
+
+    return () => {
+      links.forEach((link) => head.removeChild(link));
+    };
   }, []);
 
   return null;

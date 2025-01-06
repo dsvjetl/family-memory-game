@@ -7,18 +7,11 @@ import { theme } from '../../../../shared/utils/theme';
 import { Card } from '../../models';
 
 const MemoryCard = ({ card, onCardClick, matches, disabled }) => {
-  const [preloadedImage, setPreloadedImage] = useState('');
   const [isMatch, setIsMatch] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   const underLaptop = useMediaQuery(theme.breakpoints.down('laptop'));
   const underTablet = useMediaQuery(theme.breakpoints.down('tablet'));
-
-  useEffect(() => {
-    const image = new Image();
-    image.src = `/images/${card.fileName}`;
-    image.onload = () => setPreloadedImage(image.src);
-  }, [card.fileName]);
 
   useEffect(() => {
     const isMatch =
@@ -64,22 +57,34 @@ const MemoryCard = ({ card, onCardClick, matches, disabled }) => {
     };
   };
 
-  return (
+  return isVisible || isMatch ? (
     <Avatar
       alt="Card image"
-      src={isVisible || isMatch ? preloadedImage : ''}
+      src={`images/${card.fileName}`}
       sx={{
         width: avatarSize().width,
         height: avatarSize().length,
         marginBottom: 3,
         boxShadow: `0px 0px 14px 3px ${isMatch ? theme.palette.success.main : theme.palette.primary.main}`,
+        pointerEvents: `${disabled ? 'none' : ''}`,
+      }}
+      variant={'rounded'}
+    />
+  ) : (
+    <Avatar
+      alt="Card logo"
+      sx={{
+        width: avatarSize().width,
+        height: avatarSize().length,
+        marginBottom: 3,
+        boxShadow: `0px 0px 14px 3px ${theme.palette.primary.main}`,
         cursor: `${'pointer'}`,
         pointerEvents: `${disabled ? 'none' : ''}`,
       }}
       variant={'rounded'}
       onClick={handleCardClick}
     >
-      {!isMatch && <Face fontSize={'large'} color={'primary'} />}
+      <Face fontSize={'large'} color={'primary'} />
     </Avatar>
   );
 };
