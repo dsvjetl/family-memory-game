@@ -1,4 +1,6 @@
 const toBoolean = (value) => {
+  if (!value) return;
+
   if (typeof value === 'boolean') {
     return value;
   }

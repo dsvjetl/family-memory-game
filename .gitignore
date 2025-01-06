@@ -27,3 +27,6 @@ dist-ssr
 # Env files
 .env.local
 .env.production
+
+# MSW
+public/mockServiceWorker.js
