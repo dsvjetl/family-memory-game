@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -9,6 +9,9 @@ const Timer = ({ isGameEnded, newGameStarted }) => {
   const [time, setTime] = useState(0);
 
   const dispatch = useDispatch();
+  const underTablet = useMediaQuery((theme) =>
+    theme.breakpoints.down('tablet'),
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,8 +37,8 @@ const Timer = ({ isGameEnded, newGameStarted }) => {
   };
 
   return (
-    <Box textAlign={'center'} marginTop={5}>
-      <Typography variant={'h4'}>
+    <Box textAlign={'center'} marginTop={underTablet ? 2 : 5}>
+      <Typography variant={'h4'} fontSize={underTablet ? 25 : null}>
         Time:{' '}
         <Typography
           variant={'span'}
