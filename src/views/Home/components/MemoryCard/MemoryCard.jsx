@@ -41,7 +41,7 @@ const MemoryCard = ({ card, onCardClick, matches, disabled }) => {
   };
 
   const avatarSize = () => {
-    let size = 145;
+    let size = 165;
 
     if (underLaptop) {
       size = 110;

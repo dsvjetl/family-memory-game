@@ -5,15 +5,16 @@ const customBreakpoints = {
   tablet: 640,
   laptop: 1024,
   desktop: 1200,
+  customDesktop: 1070,
 };
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Replace with your desired primary color
+      main: '#1976d2',
     },
     secondary: {
-      main: '#dc004e', // Replace with your desired secondary color
+      main: '#dc004e',
     },
     error: {
       main: '#f44336',

@@ -111,7 +111,7 @@ const MemoryGame = () => {
   );
 
   return (
-    <Container maxWidth="desktop">
+    <Container maxWidth="customDesktop">
       {renderDialog()}
       {isGameEnded && <Confetti />}
       <Timer isGameEnded={isGameEnded} newGameStarted={hasNewGameStarted} />

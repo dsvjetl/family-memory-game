@@ -89,6 +89,16 @@ const cards = [
     p_key: 18,
     f_key: 17,
   },
+  {
+    fileName: 'dominik.png',
+    p_key: 19,
+    f_key: 20,
+  },
+  {
+    fileName: 'dominik.png',
+    p_key: 20,
+    f_key: 19,
+  },
 ];
 
 export default cards;
