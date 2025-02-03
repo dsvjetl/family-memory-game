@@ -4,8 +4,7 @@ const customBreakpoints = {
   mobile: 0,
   tablet: 640,
   laptop: 1024,
-  desktop: 1200,
-  customDesktop: 1070,
+  desktop: 1070,
 };
 
 const theme = createTheme({
