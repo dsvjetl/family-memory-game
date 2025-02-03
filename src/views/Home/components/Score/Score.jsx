@@ -7,7 +7,7 @@ const Score = ({ matchesLength, cardsLength }) => {
   );
 
   return (
-    <Box textAlign={'center'} marginBottom={underTablet ? 3 : 6}>
+    <Box textAlign={'center'} marginBottom={underTablet ? 3 : 4}>
       <Typography
         variant={'h6'}
         fontWeight={500}

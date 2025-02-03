@@ -26,6 +26,7 @@ const MemoryGame = () => {
   const [hasNewGameStarted, setHasNewGameStarted] = useState(false);
 
   const finalTime = useSelector((state) => state.time.finalTime);
+  const overTablet = useMediaQuery(theme.breakpoints.up('tablet'));
   const underTablet = useMediaQuery(theme.breakpoints.down('tablet'));
 
   const delayLength = 1500;
@@ -121,7 +122,7 @@ const MemoryGame = () => {
           direction="row"
           flexWrap="wrap"
           justifyContent={'space-between'}
-          columnGap={1}
+          columnGap={overTablet ? 2.1 : 1}
         >
           {shuffledCards.map((card) => (
             <MemoryCard

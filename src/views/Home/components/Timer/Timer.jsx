@@ -37,8 +37,8 @@ const Timer = ({ isGameEnded, newGameStarted }) => {
   };
 
   return (
-    <Box textAlign={'center'} marginTop={underTablet ? 2 : 5}>
-      <Typography variant={'h4'} fontSize={underTablet ? 25 : null}>
+    <Box textAlign={'center'} marginTop={underTablet ? 2 : 3}>
+      <Typography variant={'h4'} fontSize={underTablet ? 20 : 27}>
         Time:{' '}
         <Typography
           variant={'span'}
