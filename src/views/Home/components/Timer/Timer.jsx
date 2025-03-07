@@ -16,7 +16,7 @@ const Timer = ({ isGameEnded, newGameStarted }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime((prevTime) => prevTime + 1);
-    }, 1000);
+    }, 500);
 
     if (isGameEnded) {
       dispatch(add(formatTime(time)));

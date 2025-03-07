@@ -29,7 +29,7 @@ const MemoryGame = () => {
   const overTablet = useMediaQuery(theme.breakpoints.up('tablet'));
   const underTablet = useMediaQuery(theme.breakpoints.down('tablet'));
 
-  const delayLength = 1000;
+  const delayLength = 500;
 
   useEffect(() => {
     setShuffledCards([...cards].sort(() => Math.random() - 0.5));
