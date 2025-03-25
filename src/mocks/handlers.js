@@ -1,5 +1,3 @@
-import { createApiMockHandler } from '../views/HomeExample/utils/createApiMockHandler';
-
-const handlers = [...createApiMockHandler()];
+const handlers = [];
 
 export { handlers };
